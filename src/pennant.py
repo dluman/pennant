@@ -3,7 +3,6 @@ import inspect
 
 from typing import Callable
 from functools import wraps
-from contextlib import contextmanager
 
 # This module started from an implenentation of the following blog post:
 # https://tkjoetang.medium.com/python-decorator-use-it-as-feature-flag-b28f1c03bcc9
