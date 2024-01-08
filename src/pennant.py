@@ -20,7 +20,10 @@ class FEATURE_FLAG_CODE(object):
 
   def __init__(self, condition: bool = True):
     """ Constructor """
-    self.condition = bool(condition)
+    try:
+      self.condition = bool(condition)
+    except (ValueError, TypeError):
+      self.condition = True
 
   def __enter__(self):
     """ If condition falsy, get the calling frame, raise exception """
@@ -44,7 +47,10 @@ class FlaggedCodeException(Exception):
 
 def FEATURE_FLAG_FUNCTION(status: bool = True) -> Callable:
   """ Creates decorator for wrapping functions to feature flag in/out """
-  status = bool(status)
+  try:
+    status = bool(status)
+  except (ValueError, TypeError):
+    status = True
   def feature_flag(function: Callable):
     @wraps(function)
     def wrapper(*args, **kwargs) -> Callable:
