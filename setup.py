@@ -1,4 +1,4 @@
-mport setuptools
+import setuptools
 
 setuptools.setup(
     name="pennant",
