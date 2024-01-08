@@ -2,7 +2,7 @@ import setuptools
 
 setuptools.setup(
     name="pennant",
-    version="0.1.0",
+    version="0.1.5",
     packages=['pennant'],
     package_dir={'pennant': 'src'},
     include_package_data=True,
